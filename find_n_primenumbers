@@ -1,0 +1,14 @@
+def first_n_primes(n):
+    primes = []
+    num = 2  # Starting from the first prime number
+    while len(primes) < n:
+        for i in range(2, int(num**0.5) + 1):
+            if (num % i) == 0:
+                break
+        else:
+            primes.append(num)
+        num += 1
+    return primes
+
+# Example Test Case
+print(first_n_primes(5))  # Output: [2, 3, 5, 7, 11]
